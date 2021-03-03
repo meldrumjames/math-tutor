@@ -1,16 +1,24 @@
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, StyleSheet, Dimensions } from "react-native";
+
+import CategoryCard from "../components/CategoryCard";
 
 const CategoryScreen = (props) => {
   return (
     <View style={styles.screen}>
-      <Text>Category Screen</Text>
-      <Button
-        title="go to equation"
-        onPress={() => {
-          props.navigation.navigate({ routeName: "Equation" });
-        }}
-      />
+      <View style={styles.gridContainer}>
+        <View style={styles.row}>
+          <CategoryCard operation="+" />
+          <CategoryCard operation="-" />
+        </View>
+        <View style={styles.row}>
+          <CategoryCard operation="*" />
+          <CategoryCard operation="/" />
+        </View>
+      </View>
+      <View style={styles.challengeContainer}>
+        <CategoryCard operation="challenge" />
+      </View>
     </View>
   );
 };
@@ -18,9 +26,25 @@ const CategoryScreen = (props) => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+  },
+  gridContainer: {
+    height: Dimensions.get("screen").height * 0.6,
+    // borderColor: "red",
+    // borderWidth: 2,
+  },
+  row: {
+    flex: 1,
+    flexDirection: "row",
+  },
+  challengeContainer: {
+    height: 100,
   },
 });
+
+CategoryScreen.navigationOptions = {
+  headerLeft: () => {
+    return null;
+  },
+};
 
 export default CategoryScreen;
