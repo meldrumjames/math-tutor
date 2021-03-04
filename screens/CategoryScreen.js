@@ -8,16 +8,61 @@ const CategoryScreen = (props) => {
     <View style={styles.screen}>
       <View style={styles.gridContainer}>
         <View style={styles.row}>
-          <CategoryCard operation="+" />
-          <CategoryCard operation="-" />
+          <CategoryCard
+            operation="+"
+            onSelect={() => {
+              props.navigation.navigate({
+                routeName: "Equation",
+                params: {
+                  categoryID: "+",
+                },
+              });
+            }}
+          />
+          <CategoryCard
+            operation="-"
+            onSelect={() => {
+              props.navigation.navigate({
+                routeName: "Equation",
+                params: {
+                  categoryID: "-",
+                },
+              });
+            }}
+          />
         </View>
         <View style={styles.row}>
-          <CategoryCard operation="*" />
-          <CategoryCard operation="/" />
+          <CategoryCard
+            operation="*"
+            onSelect={() => {
+              props.navigation.navigate({
+                routeName: "Equation",
+                params: {
+                  categoryID: "x",
+                },
+              });
+            }}
+          />
+          <CategoryCard
+            operation="/"
+            onSelect={() => {
+              props.navigation.navigate({
+                routeName: "Equation",
+                params: {
+                  categoryID: "÷",
+                },
+              });
+            }}
+          />
         </View>
       </View>
       <View style={styles.challengeContainer}>
-        <CategoryCard operation="challenge" />
+        <CategoryCard
+          operation="challenge"
+          onSelect={() => {
+            props.navigation.navigate({ routeName: "Equation" });
+          }}
+        />
       </View>
     </View>
   );
