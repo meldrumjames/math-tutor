@@ -6,6 +6,7 @@ import ProfileSelectionScreen from "../screens/ProfileSelectionScreen";
 import EquationScreen from "../screens/EquationScreen";
 import PassScreen from "../screens/PassScreen";
 import FailScreen from "../screens/FailScreen";
+import AddProfileScreen from "../screens/AddProfileScreen";
 
 const MainNavigator = createStackNavigator({
   Profiles: {
@@ -22,6 +23,9 @@ const MainNavigator = createStackNavigator({
   },
   Fail: {
     screen: FailScreen,
+  },
+  AddProfile: {
+    screen: AddProfileScreen,
   },
 });
 
