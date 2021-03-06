@@ -8,6 +8,8 @@ import PassScreen from "../screens/PassScreen";
 import FailScreen from "../screens/FailScreen";
 import AddProfileScreen from "../screens/AddProfileScreen";
 
+import TestingScreen from "../screens/TestingScreen";
+
 const MainNavigator = createStackNavigator({
   Profiles: {
     screen: ProfileSelectionScreen,
@@ -28,5 +30,11 @@ const MainNavigator = createStackNavigator({
     screen: AddProfileScreen,
   },
 });
+
+// const TestNav = createStackNavigator({
+//   TestEnv: {
+//     screen: TestingScreen,
+//   },
+// });
 
 export default createAppContainer(MainNavigator);

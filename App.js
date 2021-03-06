@@ -3,6 +3,7 @@ import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 
 import MainNavigator from "./navigation/Navigator";
+import TestNav from "./navigation/Navigator";
 
 const fetchFonts = () => {
   return Font.loadAsync({
