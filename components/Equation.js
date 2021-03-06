@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { View, Text, StyleSheet, Dimensions } from "react-native";
 
+import TitleText from "./text/TitleText";
+
 const Equation = (props) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{props.children}</Text>
+      <TitleText style={styles.text}>{props.children}</TitleText>
     </View>
   );
 };

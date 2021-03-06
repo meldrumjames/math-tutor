@@ -35,7 +35,6 @@ const EquationScreen = (props) => {
     // }
     setUserInput("");
     Keyboard.dismiss();
-    props.navigation.navigate({ routeName: "Result" });
   };
 
   const catID = props.navigation.getParam("categoryID");
@@ -44,22 +43,30 @@ const EquationScreen = (props) => {
     switch (catID) {
       case "+":
         if (input === numberOne + numberTwo) {
-          console.log("addition correct");
+          props.navigation.navigate({ routeName: "Pass" });
+        } else {
+          props.navigation.navigate({ routeName: "Fail" });
         }
         break;
       case "-":
         if (input === numberOne - numberTwo) {
-          console.log("subtraction correct");
+          props.navigation.navigate({ routeName: "Pass" });
+        } else {
+          props.navigation.navigate({ routeName: "Fail" });
         }
         break;
       case "x":
         if (input === numberOne * numberTwo) {
-          console.log("multiplication correct");
+          props.navigation.navigate({ routeName: "Pass" });
+        } else {
+          props.navigation.navigate({ routeName: "Fail" });
         }
         break;
       case "÷":
         if (input === numberOne / numberTwo) {
-          console.log("division correct");
+          props.navigation.navigate({ routeName: "Pass" });
+        } else {
+          props.navigation.navigate({ routeName: "Fail" });
         }
         break;
       default:

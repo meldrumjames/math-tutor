@@ -1,12 +1,14 @@
 import React from "react";
 import {
   View,
-  Text,
   StyleSheet,
   TouchableOpacity,
   TouchableNativeFeedback,
   Platform,
+  Dimensions,
 } from "react-native";
+
+import TitleText from "./text/TitleText";
 
 let TouchComp = TouchableOpacity;
 
@@ -16,24 +18,31 @@ if (Platform.OS === "android" && Platform.Version >= 21) {
 
 const CategoryCard = (props) => {
   return (
-    <View style={styles.gridItem}>
-      <TouchComp style={{ flex: 1 }} onPress={props.onSelect}>
-        <View style={styles.container}>
-          <Text style={styles.text}>{props.operation}</Text>
-        </View>
-      </TouchComp>
+    <View style={{ ...styles.gridContainer, ...props.style }}>
+      <View style={styles.gridItem}>
+        <TouchComp style={{ flex: 1 }} onPress={props.onSelect}>
+          <View style={styles.container}>
+            <TitleText style={styles.text}>{props.operation}</TitleText>
+          </View>
+        </TouchComp>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  gridContainer: {
+    flex: 1,
+    alignItems: "center",
+  },
   gridItem: {
     flex: 1,
-    height: 150,
+    width: (Dimensions.get("window").width * 0.9) / 2,
     borderRadius: 10,
     overflow: "hidden",
     borderColor: "black",
     borderWidth: 1,
+    margin: 15,
   },
   container: {
     flex: 1,
@@ -42,7 +51,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    fontSize: 20,
+    fontSize: 40,
   },
 });
 

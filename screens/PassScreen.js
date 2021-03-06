@@ -3,18 +3,25 @@ import { View, Text, Image, StyleSheet } from "react-native";
 
 import MainButton from "../components/MainButton";
 
-const FailScreen = (props) => {
+const PassScreen = (props) => {
   return (
     <View style={styles.screen}>
-      <Text style={styles.text}>Oh no!</Text>
+      <Text style={styles.text}>Well done!</Text>
       <Image
         style={styles.image}
         source={{
           uri:
-            "https://cdn.pixabay.com/photo/2017/01/31/22/15/icon-2027661_960_720.png",
+            "https://cdn.pixabay.com/photo/2012/11/25/06/35/samuel-67197_960_720.jpg",
         }}
       />
-      <MainButton style={styles.button}>Try again</MainButton>
+      <MainButton
+        style={styles.button}
+        onPress={() => {
+          props.navigation.navigate("Equation");
+        }}
+      >
+        Try again
+      </MainButton>
     </View>
   );
 };
@@ -22,7 +29,7 @@ const FailScreen = (props) => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
   },
   text: {
@@ -35,10 +42,10 @@ const styles = StyleSheet.create({
   },
 });
 
-FailScreen.navigationOptions = {
+PassScreen.navigationOptions = {
   headerLeft: () => {
     return null;
   },
 };
 
-export default FailScreen;
+export default PassScreen;

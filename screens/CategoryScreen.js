@@ -2,6 +2,7 @@ import React from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
 
 import CategoryCard from "../components/CategoryCard";
+import ChallengeButton from "../components/ChallengeButton";
 
 const CategoryScreen = (props) => {
   return (
@@ -33,7 +34,7 @@ const CategoryScreen = (props) => {
         </View>
         <View style={styles.row}>
           <CategoryCard
-            operation="*"
+            operation="x"
             onSelect={() => {
               props.navigation.navigate({
                 routeName: "Equation",
@@ -44,7 +45,7 @@ const CategoryScreen = (props) => {
             }}
           />
           <CategoryCard
-            operation="/"
+            operation="÷"
             onSelect={() => {
               props.navigation.navigate({
                 routeName: "Equation",
@@ -56,13 +57,8 @@ const CategoryScreen = (props) => {
           />
         </View>
       </View>
-      <View style={styles.challengeContainer}>
-        <CategoryCard
-          operation="challenge"
-          onSelect={() => {
-            props.navigation.navigate({ routeName: "Equation" });
-          }}
-        />
+      <View>
+        <ChallengeButton>CHALLENGE</ChallengeButton>
       </View>
     </View>
   );
@@ -74,15 +70,14 @@ const styles = StyleSheet.create({
   },
   gridContainer: {
     height: Dimensions.get("screen").height * 0.6,
-    // borderColor: "red",
-    // borderWidth: 2,
   },
   row: {
     flex: 1,
     flexDirection: "row",
   },
-  challengeContainer: {
-    height: 100,
+  challengeCard: {
+    height: Dimensions.get("screen").height * 0.2,
+    width: 500,
   },
 });
 

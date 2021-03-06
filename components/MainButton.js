@@ -7,12 +7,14 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import TitleText from "./text/TitleText";
+
 const MainButton = (props) => {
   return (
-    <View style={styles.button}>
+    <View style={{ ...styles.button, ...props.style }}>
       <TouchableOpacity onPress={props.onPress}>
         <View>
-          <Text style={styles.buttonText}>{props.children}</Text>
+          <TitleText style={styles.buttonText}>{props.children}</TitleText>
         </View>
       </TouchableOpacity>
     </View>
@@ -23,7 +25,6 @@ const styles = StyleSheet.create({
   button: {
     width: "100%",
     padding: 10,
-    height: Dimensions.get("screen").height * 0.15,
     borderWidth: 2,
     borderColor: "black",
     justifyContent: "center",

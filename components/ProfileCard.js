@@ -8,6 +8,8 @@ import {
   Platform,
 } from "react-native";
 
+import TitleText from "./text/TitleText";
+
 let TouchComp = TouchableOpacity;
 
 if (Platform.OS === "android" && Platform.Version >= 21) {
@@ -21,7 +23,7 @@ const ProfileCard = (props) => {
         <View
           style={{ ...styles.container, ...{ backgroundColor: props.color } }}
         >
-          <Text style={styles.titleText}>{props.name}</Text>
+          <TitleText style={styles.titleText}>{props.name}</TitleText>
         </View>
       </TouchComp>
     </View>

@@ -5,9 +5,9 @@ import AppLoading from "expo-app-loading";
 import MainNavigator from "./navigation/Navigator";
 
 const fetchFonts = () => {
-  Font.loadAsync({
-    "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
-    "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
+  return Font.loadAsync({
+    "droid-sans": require("./assets/fonts/DroidSans.ttf"),
+    "droid-sans-bold": require("./assets/fonts/DroidSans-Bold.ttf"),
   });
 };
 
