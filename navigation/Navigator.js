@@ -10,31 +10,31 @@ import AddProfileScreen from "../screens/AddProfileScreen";
 
 import TestingScreen from "../screens/TestingScreen";
 
-const MainNavigator = createStackNavigator({
-  Profiles: {
-    screen: ProfileSelectionScreen,
-  },
-  Categories: {
-    screen: CategoryScreen,
-  },
-  Equation: {
-    screen: EquationScreen,
-  },
-  Pass: {
-    screen: PassScreen,
-  },
-  Fail: {
-    screen: FailScreen,
-  },
-  AddProfile: {
-    screen: AddProfileScreen,
-  },
-});
-
-// const TestNav = createStackNavigator({
-//   TestEnv: {
-//     screen: TestingScreen,
+// const MainNavigator = createStackNavigator({
+//   Profiles: {
+//     screen: ProfileSelectionScreen,
+//   },
+//   Categories: {
+//     screen: CategoryScreen,
+//   },
+//   Equation: {
+//     screen: EquationScreen,
+//   },
+//   Pass: {
+//     screen: PassScreen,
+//   },
+//   Fail: {
+//     screen: FailScreen,
+//   },
+//   AddProfile: {
+//     screen: AddProfileScreen,
 //   },
 // });
 
-export default createAppContainer(MainNavigator);
+const TestNav = createStackNavigator({
+  TestEnv: {
+    screen: TestingScreen,
+  },
+});
+
+export default createAppContainer(TestNav);
